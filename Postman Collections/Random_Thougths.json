@@ -2,6 +2,7 @@
   "info": {
     "_postman_id": "3aea4c98-61a4-4968-8fed-ea1a26feae18",
     "name": "Random Thougths",
+    "description": "some info",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -88,6 +89,28 @@
         "url": "https://hooks.slack.com/services/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"
       },
       "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "96b0aad0-1231-4119-b4a1-a8d426c6d33c",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "8ea9eb3d-c1b8-42c5-9e84-306a1366989a",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
     }
   ]
 }
