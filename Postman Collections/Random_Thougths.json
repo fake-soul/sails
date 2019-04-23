@@ -1,0 +1,93 @@
+{
+  "info": {
+    "_postman_id": "3aea4c98-61a4-4968-8fed-ea1a26feae18",
+    "name": "Random Thougths",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&key=747&lang=en",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b6a1d0ec-eabf-4c30-8ec0-4d0b2e0dc1a5",
+            "exec": [
+              "var res = pm.response.json();",
+              "pm.environment.set(\"author\", res.quoteAuthor);",
+              "pm.environment.set(\"data\", res.quoteText);",
+              "pm.environment.set(\"website\", res.quoteLink);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "347efa47-265e-4f50-af31-40349bfff0ef",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
+          "protocol": "http",
+          "host": [
+            "api",
+            "forismatic",
+            "com"
+          ],
+          "path": [
+            "api",
+            "1.0",
+            ""
+          ],
+          "query": [
+            {
+              "key": "method",
+              "value": "getQuote"
+            },
+            {
+              "key": "format",
+              "value": "json"
+            },
+            {
+              "key": "key",
+              "value": "10000",
+              "disabled": true
+            },
+            {
+              "key": "lang",
+              "value": "en"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://hooks.slack.com/services/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",
+      "_postman_id": "3ea92a1e-3707-43c5-95a0-40c203459269",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"attachments\": [\n        {\n            \"title\": \"{{data}}\",\n            \"text\": \"by {{author}}!\",\n            \"color\": \"#7CD197\"\n        }\n    ]\n}"
+        },
+        "url": "https://hooks.slack.com/services/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"
+      },
+      "response": []
+    }
+  ]
+}
